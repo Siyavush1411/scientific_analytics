@@ -1,0 +1,30 @@
+services:
+  db: 
+    image: postgres:latest
+    environment: 
+      - POSTGRES_DB=ScienceFlow
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=''
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  pgdata:

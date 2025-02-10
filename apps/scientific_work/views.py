@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from .serialisers import ScientificWorkSerializer
+from .models import ScientificWork
+from rest_framework import viewsets
 
-# Create your views here.
+class ScientyficWorkView(viewsets.ModelViewSet):
+    queryset = ScientificWork.objects.all()
+    serializer_class = ScientificWorkSerializer
