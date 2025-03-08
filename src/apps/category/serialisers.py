@@ -6,9 +6,5 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = [
         'id',
-        'category',
-        'author',
-        'work_name',
-        'work_rating',
-        'uniquenes_score',
+        'category_name'
         ]

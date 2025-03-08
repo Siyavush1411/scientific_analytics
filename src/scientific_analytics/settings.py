@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'scientific_analytics.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ScienceFlow',
+        'NAME': 'scienceflow',
         'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': '172.17.0.2',
+        'PASSWORD': '2310',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
