@@ -3,7 +3,8 @@ from django.utils.translation import gettext_lazy as _
 
 class Status(models.Model):
     class Meta:
-        verbose_name=_('status')
+        verbose_name = _('status')
+        verbose_name_plural = _('statuses')
         
     CATEGORY_CHOICES = [
         ('student', _('Student')),
@@ -18,7 +19,7 @@ class Status(models.Model):
     ]
     
     status_name = models.CharField(
-        verbose_name=_('status name'),
+        verbose_name = _('status name'),
         choices=CATEGORY_CHOICES,
         null=False,
         blank=False        

@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.12
 
 WORKDIR /scientific_analytics
 
@@ -6,7 +6,7 @@ COPY . .
 
 RUN apt-get update && apt-get install -y python3-distutils
 RUN pip install poetry
-RUN poetry install --no-dev
+RUN poetry install
 
 EXPOSE 8000
 

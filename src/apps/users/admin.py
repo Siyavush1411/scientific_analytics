@@ -12,7 +12,6 @@ class UserAdmin(ModelAdmin):
         'last_name',
         'patronymic',
         'rating',
-        'scientific_work',
         'status',
     )
     search_fields = ['scientific_work', 'status',]

@@ -6,7 +6,7 @@ from apps.users.views import UserView
 
 router = DefaultRouter()
 
-router.register(r'scientufuc-works', ScientyficWorkView)
+router.register(r'scientufic-works', ScientyficWorkView)
 router.register(r'category', CategoryViewSet)
-router.register(r'scientufuc-works', StatusView)
-router.register(r'scientufuc-works', UserView)
+router.register(r'statuses', StatusView)
+router.register(r'users', UserView)
