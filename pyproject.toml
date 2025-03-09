@@ -1,5 +1,5 @@
 [project]
-name = "scientific_analytics"
+name = "config"
 version = "0.01"
 description = ""
 authors = [

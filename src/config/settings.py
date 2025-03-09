@@ -40,13 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'rest_framework',
-    'rest-framework',
+    'rest_framework_simplejwt',
     'psycopg',
     
     'apps.category',
     'apps.scientific_work',
     'apps.status',
-    'apps.users',
+    'apps.users'
 ]
 
 MIDDLEWARE = [
@@ -97,8 +97,8 @@ DATABASES = {
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 100,
-    'DEFAULT_AUTHENTICATION_CLASSES' : (
-        'rest_framework_simplejwt.authenticetion.JWTauthentication'
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
 
