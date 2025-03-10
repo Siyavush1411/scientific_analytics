@@ -1,0 +1,23 @@
+[project]
+name = "config"
+version = "0.01"
+description = ""
+authors = [
+    {name = "siyavush1411",email = "siyavushmirzaev375@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django (>=5.1.6,<6.0.0)",
+    "djangorestframework (>=3.15.2,<4.0.0)",
+    "psycopg (>=3.2.4,<4.0.0)",
+    "djangorestframework-simplejwt (>=5.5.0,<6.0.0)",
+    "numpy (>=2.2.3,<3.0.0)",
+    "matplotlib (>=3.10.1,<4.0.0)",
+    "django-cors-headers (>=4.7.0,<5.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
