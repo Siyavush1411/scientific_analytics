@@ -9,7 +9,6 @@ class ScientificWorkAdmin(ModelAdmin):
     list_display = (
         'id',
         'category',
-        'author',
         'work_name',
         'work_rating',
         'uniquenes_score',

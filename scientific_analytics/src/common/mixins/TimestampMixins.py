@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-class TimestapmMixin():    
+class TimestapmMixin():
+    class meta:
+        abstract = True
     created_at = models.DateField(
         verbose_name=_('create_at'),
         null=False,

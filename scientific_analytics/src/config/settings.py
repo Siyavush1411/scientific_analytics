@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'matplotlib',
     'numpy',
     'corsheaders',
+    'rest_framework_swagger',
+    'drf_yasg',
     
     'apps.category',
     'apps.scientific_work',
@@ -93,9 +95,17 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'scienceflow',
         'USER': 'postgres',
-        'PASSWORD': '2310',
+        'PASSWORD': '1111',
         'HOST': '127.0.0.1',
         'PORT': '5432',
+    },
+    'secondary' : {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'material',
+        'USER': 'root',
+        'PASSWORD': 'dick69',
+        'HOST': '0.0.0.0',
+        'PORT': '3306',
     }
 }
 
