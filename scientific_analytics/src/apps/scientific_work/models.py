@@ -15,31 +15,39 @@ class ScientificWork(TimestapmMixin, models.Model):
         on_delete=models.PROTECT
     )
     
-    author = models.ForeignKey(
+    author = models.ManyToManyField(
         'users.User',
         verbose_name=_('author'),
         null=False,
         blank=True,
-        on_delete=models.PROTECT,
     )
     
     work_name = models.CharField(
-        verbose_name=_('work name'),
-        max_length=255,
-        null=False,
-        blank=False,
+        verbose_name = _('work name'),
+        max_length = 255,
+        null = False,
+        blank = False,
     )
     
     work_rating = models.IntegerField(
-        verbose_name=_('work rating'),
-        null=False,
+        verbose_name = _('work rating'),
+        null =False,
         blank=False,
     )
     
+    file_path = models.ImageField(
+        verbose_name = _('file path'),
+        upload_to='uploads/',
+    )
+    
     uniquenes_score = models.IntegerField(
-        verbose_name=_('uniquenes score'),
+        verbose_name = _('uniquenes score'),
         null=False,
         blank=False
+    )
+    
+    material_work_id = models.IntegerField(
+        verbose_name=_('materia work id')
     )
     
     def __str__(self):

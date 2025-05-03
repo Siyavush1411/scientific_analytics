@@ -1,11 +1,11 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractUser
+from common.mixins.TimestampMixins import TimestapmMixin
 from apps.status.models import Status
 
 
-class User(AbstractUser):
-       
+class User(AbstractUser, TimestapmMixin):
     first_name = models.CharField(
         verbose_name=_('first name'),
         max_length=255,
@@ -34,13 +34,6 @@ class User(AbstractUser):
         default=0
     )
     
-    scientific_work = models.ManyToManyField(
-        'scientific_work.ScientificWork',
-        verbose_name=_('scientific work'),
-        blank=False,
-        related_name='users_scientific_works'
-    )
-    
     status = models.ForeignKey(
         Status,
         verbose_name=_('status'),      
@@ -62,6 +55,15 @@ class User(AbstractUser):
         upload_to='avatars/',
         null=True,
         blank=True
+    )
+    
+    degree = models.CharField(
+        verbose_name=_('degree'),
+        max_length=80,
+    )
+    
+    material_user_id = models.CharField(
+        verbose_name=_('material user id')
     )
     
     def __str__(self):
