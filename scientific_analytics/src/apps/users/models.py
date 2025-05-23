@@ -23,7 +23,7 @@ class User(AbstractUser, TimestapmMixin):
     patronymic = models.CharField(
         verbose_name=_('patronymic'),
         max_length=255,
-        null=False,
+        null=True,
         blank=False,
     )
 
