@@ -21,3 +21,4 @@ def upload_files(request):
         handle_uploaded_file(f)  
 
     return Response({'message': 'Файлы получены'})
+

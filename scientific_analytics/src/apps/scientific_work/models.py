@@ -50,5 +50,19 @@ class ScientificWork(TimestapmMixin, models.Model):
         verbose_name=_('materia work id')
     )
     
+    date_of_publish = models.DateField(
+        verbose_name=_('date of publish'),
+        null=True,
+        blank=True
+    )
+    
+    conferenc_name = models.CharField(
+        verbose_name=_('conferenc name'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    
+    
     def __str__(self):
         return str(self.work_name)

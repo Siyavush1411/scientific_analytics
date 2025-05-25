@@ -15,11 +15,12 @@ class UserListSerializer(serializers.ModelSerializer):
             'patronymic',
             'rating',
             'status',
-            'password'
+            'password',
+
         ]
     
     def create(self, validated_data):
-        password = validated_data.pop("password", None)  # Убираем пароль из данных
+        password = validated_data.pop("password", None)
         user = User(**validated_data)
         if password:
             user.set_password(password)

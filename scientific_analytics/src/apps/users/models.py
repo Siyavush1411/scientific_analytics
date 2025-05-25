@@ -66,5 +66,11 @@ class User(AbstractUser, TimestapmMixin):
         verbose_name=_('material user id')
     )
     
+    about_self = models.TextField(
+        verbose_name=_('about self'),
+        null=True,
+        blank=True
+    )
+    
     def __str__(self):
         return self.username

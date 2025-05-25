@@ -5,7 +5,10 @@ from rest_framework_simplejwt.views import TokenRefreshView
 from apps.users.views import RegisterView, UserTokenObtainPairView, ProfileView
 from apps.institution.views import InstitutionDetailView, InstitutionListCreateView
 from core.services.views import ScientificWorkStatsAPI, UserStatsAPI, InstitutionStatsAPI
+
 from apps.scientific_work.views import upload_files
+from apps.users.views import upload_avatar
+from apps.users.views import get_current_user
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -41,5 +44,7 @@ urlpatterns = [
     path('api/stats/users/', UserStatsAPI.as_view()),
     path('sync-authors/', synch, name='sync-authors'),
     path('upload/', upload_files),
+    path('upload_avatar/', upload_avatar),
+    path('get_current_user/', get_current_user),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
