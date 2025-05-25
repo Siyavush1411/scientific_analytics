@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import User
 from django.contrib.admin import ModelAdmin
-from apps.users.utils.synchronize_users import synch
+from apps.users.utils.synchronize_users import synch, synch_scientific_works
 
 class UserAdmin(ModelAdmin):
     model = User
@@ -9,7 +9,7 @@ class UserAdmin(ModelAdmin):
     
     @admin.action(description='Синхронизировать авторов')
     def synch_authors(self, request, queryset):
-        synch()
+        synch_scientific_works()
         self.message_user(request, "Авторы синхронизированы")
     
     list_display = (
@@ -19,6 +19,8 @@ class UserAdmin(ModelAdmin):
         'patronymic',
         'rating',
         'status',
+        'created_at',
+        'update_at',
     )
     search_fields = ['scientific_work', 'status',]
 

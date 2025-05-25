@@ -23,7 +23,7 @@ class User(AbstractUser, TimestapmMixin):
     patronymic = models.CharField(
         verbose_name=_('patronymic'),
         max_length=255,
-        null=False,
+        null=True,
         blank=False,
     )
 
@@ -64,6 +64,12 @@ class User(AbstractUser, TimestapmMixin):
     
     material_user_id = models.CharField(
         verbose_name=_('material user id')
+    )
+    
+    about_self = models.TextField(
+        verbose_name=_('about self'),
+        null=True,
+        blank=True
     )
     
     def __str__(self):

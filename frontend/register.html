@@ -124,29 +124,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#" style="color: var(--primary-color);">
-                <i class="bi bi-journal-bookmark-fill me-2"></i>ScienceFlow
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="#">Главная</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="#">О нас</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="btn btn-primary" href="./login.html">Войти</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    
     <div class="registration-card">
         <div class="registration-header">
             <h2 class="mb-3"><i class="bi bi-person-plus-fill me-2"></i>Регистрация</h2>
@@ -154,73 +132,52 @@
         </div>
         
         <div class="registration-body">
-            <form>
+            <form id="registrationForm">
                 <div class="row g-3">
+                    <!-- Логин -->
+                    <div class="col-12">
+                        <label for="username" class="form-label">Логин*</label>
+                        <input type="text" class="form-control" name="username" required 
+                               pattern="^[!w.@+-]+$" 
+                               title="Латинские буквы, цифры и @/./+/-/_">
+                    </div>
+
                     <!-- Имя -->
-                    <div class="col-md-6">
-                        <label for="firstName" class="form-label">Имя</label>
-                        <input type="text" class="form-control" id="firstName" required>
+                    <div class="col-md-4">
+                        <label for="first_name" class="form-label">Имя*</label>
+                        <input type="text" class="form-control" name="first_name" required>
                     </div>
 
                     <!-- Фамилия -->
-                    <div class="col-md-6">
-                        <label for="lastName" class="form-label">Фамилия</label>
-                        <input type="text" class="form-control" id="lastName" required>
+                    <div class="col-md-4">
+                        <label for="last_name" class="form-label">Фамилия*</label>
+                        <input type="text" class="form-control" name="last_name" required>
                     </div>
 
-                    <!-- Patronymic -->
-                    <div class="col-12">
-                        <label for="patronymic" class="form-label">Отчество</label>
-                        <input type="text" class="form-control" id="patronymic" required>
-                    </div>
-
-                    <div class="col-12">
-                        <label for="username" class="form-label">login</label>
-                        <input type="text" class="form-control" id="username" required>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="col-12">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                    <!-- Отчество -->
+                    <div class="col-md-4">
+                        <label for="patronymic" class="form-label">Отчество*</label>
+                        <input type="text" class="form-control" name="patronymic" required>
                     </div>
 
                     <!-- Пароль -->
                     <div class="col-md-6">
-                        <label for="password" class="form-label">Пароль</label>
-                        <input type="password" class="form-control" id="password" required>
+                        <label for="password" class="form-label">Пароль*</label>
+                        <input type="password" class="form-control" name="password" required>
                     </div>
 
-                    <!-- Подтверждение пароля -->
+                    <!-- Статус -->
                     <div class="col-md-6">
-                        <label for="confirmPassword" class="form-label">Подтвердите пароль</label>
-                        <input type="password" class="form-control" id="confirmPassword" required>
+                        <label class="form-label">Статус*</label>
+                        <select class="form-select" name="status" required>
+                            <option value="1">Студент</option>
+                            <option value="2">Исследователь</option>
+                            <option value="3">Преподаватель</option>
+                        </select>
                     </div>
 
-                    <!-- Тип аккаунта -->
-                    <div class="col-12">
-                        <label class="form-label">Тип аккаунта</label>
-                        <div class="d-flex gap-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="accountType" id="student">
-                                <label class="form-check-label" for="student">
-                                    Студент
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="accountType" id="researcher">
-                                <label class="form-check-label" for="researcher">
-                                    Исследователь
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="accountType" id="institution">
-                                <label class="form-check-label" for="institution">
-                                    Учреждение
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Рейтинг (скрытое поле) -->
+                    <input type="hidden" name="rating" value="0">
 
                     <!-- Кнопка регистрации -->
                     <div class="col-12 mt-4">
@@ -231,93 +188,68 @@
                 </div>
             </form>
 
-            <!-- Социальные сети -->
-            <div class="social-login">
-                <a href="#" class="social-btn google" title="Google">
-                    <i class="bi bi-google"></i>
-                </a>
-                <a href="#" class="social-btn facebook" title="Facebook">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="#" class="social-btn github" title="GitHub">
-                    <i class="bi bi-github"></i>
-                </a>
-            </div>
-
             <!-- Ссылка на вход -->
             <div class="login-link">
-                Уже есть аккаунт? <a href="#">Войти</a>
+                Уже есть аккаунт? <a href="./login.html">Войти</a>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const registrationForm = document.querySelector('form');
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('registrationForm');
             
-            if (registrationForm) {
-                registrationForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    // Маппинг типов аккаунта на ID статуса
-                    const accountTypeMapping = {
-                        student: 1,       // ID для "Студент"
-                        researcher: 2,    // ID для "Исследователь"
-                        institution: 3    // ID для "Учреждение"
-                    };
-        
-                    // Сбор данных формы
-                    const formData = {
-                        username: document.getElementById('username').value,
-                        first_name: document.getElementById('firstName').value,
-                        last_name: document.getElementById('lastName').value,
-                        patronymic: document.getElementById('patronymic').value,
-                        email: document.getElementById('email').value,
-                        password: document.getElementById('password').value,
-                        status: accountTypeMapping[document.querySelector('input[name="accountType"]:checked').value]
-                    };
-        
-                    // Валидация пароля
-                    if (formData.password !== document.getElementById('confirmPassword').value) {
-                        alert('Пароли не совпадают');
-                        return;
-                    }
-        
-                    try {
-                        // Отправка запроса
-                        const response = await fetch('http://127.0.0.1:8000/register/', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(formData)
-                        });
-        
-                        const data = await response.json();
-        
-                        if (response.ok) {
-                            // Успешная регистрация
-                            alert('Регистрация прошла успешно!');
-                            window.location.href = './index.html';
-                        } else {
-                            // Обработка ошибок
-                            if (data.username) {
-                                alert('Ошибка: ' + data.username[0]);
-                            } else if (data.email) {
-                                alert('Ошибка: ' + data.email[0]);
-                            } else if (data.password) {
-                                alert('Ошибка: ' + data.password[0]);
-                            } else {
-                                alert('Произошла ошибка при регистрации');
-                            }
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = {
+                    username: form.username.value,
+                    first_name: form.first_name.value,
+                    last_name: form.last_name.value,
+                    patronymic: form.patronymic.value,
+                    password: form.password.value,
+                    status: parseInt(form.status.value),
+                    rating: 0 // По умолчанию
+                };
+
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/register/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify( formData )
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        const token = result.token; 
+                        localStorage.setItem('access_token', token);
+
+                        window.location.href = './index.html';
+                    } else {
+                        let errors = '';
+                        for (const key in result) {
+                            errors += `${key}: ${result[key].join(', ')}\n`;
                         }
-                    } catch (error) {
-                        console.error('Ошибка:', error);
-                        alert('Произошла ошибка при отправке запроса');
+                        alert(`Ошибка:\n${errors}`);
                     }
-                });
-            }
+                    
+                    if (response.ok) {
+                        window.location.href = './index.html';
+                    } else {
+                        let errors = '';
+                        for (const key in result) {
+                            errors += `${key}: ${result[key].join(', ')}\n`;
+                        }
+                        alert(`Ошибка:\n${errors}`);
+                    }
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    alert('Ошибка соединения с сервером');
+                }
+            });
         });
     </script>
 </body>

@@ -100,12 +100,12 @@ DATABASES = {
         'PORT': '5432',
     },
     'secondary' : {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'material',
-        'USER': 'root',
-        'PASSWORD': 'dick69',
-        'HOST': '0.0.0.0',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'temp',
+        'USER': 'postgres',
+        'PASSWORD': '1111',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -166,3 +166,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

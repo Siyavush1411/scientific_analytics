@@ -71,5 +71,19 @@ class ScientificWork(TimestapmMixin, models.Model):
     material_direction_dictionary_id = models.IntegerField(verbose_name=_('material direction dictionary ID'), default=0)
 
     
+    date_of_publish = models.DateField(
+        verbose_name=_('date of publish'),
+        null=True,
+        blank=True
+    )
+    
+    conferenc_name = models.CharField(
+        verbose_name=_('conferenc name'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    
+    
     def __str__(self):
         return str(self.work_name)
