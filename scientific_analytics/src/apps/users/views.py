@@ -1,4 +1,4 @@
-from .serialisers import UserListSerializer, UserTokenObtainPairSerializer
+from .serialisers import UserListSerializer, UserTokenObtainPairSerializer, UserProfileSerializer
 from .models import User
 from rest_framework import viewsets
 from rest_framework import generics, permissions
@@ -23,7 +23,7 @@ class UserTokenObtainPairView(TokenObtainPairView):
     serializer_class = UserTokenObtainPairSerializer
 
 class ProfileView(generics.RetrieveAPIView):
-    serializer_class = UserListSerializer
+    serializer_class = UserProfileSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self):
