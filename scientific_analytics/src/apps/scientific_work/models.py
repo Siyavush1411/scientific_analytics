@@ -31,7 +31,7 @@ class ScientificWork(TimestapmMixin, models.Model):
     
     work_rating = models.IntegerField(
         verbose_name = _('work rating'),
-        null =False,
+        null =True,
         blank=False,
     )
     
@@ -41,9 +41,8 @@ class ScientificWork(TimestapmMixin, models.Model):
     )
     
     uniquenes_score = models.IntegerField(
-
         verbose_name = _('uniquenes score'),
-        null=False,
+        null=True,
         blank=False
     )
     
@@ -58,8 +57,6 @@ class ScientificWork(TimestapmMixin, models.Model):
     user_id = models.IntegerField(verbose_name=_('user ID'), default=0)
     date_edit = models.DateTimeField(verbose_name=_('date edited'), auto_now=True)
     date_add = models.DateTimeField(verbose_name=_('date added'), auto_now_add=True)
-    file_path = models.CharField(verbose_name=_('file path'), max_length=500, default="")
-    status = models.IntegerField(verbose_name=_('status'), default=0)
     kafedra_id = models.IntegerField(verbose_name=_('kafedra ID'), default=0)
     comment = models.TextField(verbose_name=_('comment'), blank=True, null=True, default="")
     user_k = models.IntegerField(verbose_name=_('user K'), default=0)
@@ -69,20 +66,6 @@ class ScientificWork(TimestapmMixin, models.Model):
     url = models.URLField(verbose_name=_('URL'), blank=True, null=True, default="")
     material_direction_id = models.IntegerField(verbose_name=_('material direction ID'), default=0)
     material_direction_dictionary_id = models.IntegerField(verbose_name=_('material direction dictionary ID'), default=0)
-
-    
-    date_of_publish = models.DateField(
-        verbose_name=_('date of publish'),
-        null=True,
-        blank=True
-    )
-    
-    conferenc_name = models.CharField(
-        verbose_name=_('conferenc name'),
-        max_length=255,
-        null=True,
-        blank=True
-    )
     
     
     def __str__(self):
